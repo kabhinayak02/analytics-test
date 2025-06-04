@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>GA4 Direct Login Event Test</title>
+
+    <!-- ✅ Google Analytics gtag.js (Direct GA integration) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        // Replace with your GA4 Measurement ID
+        gtag('config', 'G-C1E1YK5Z15');
+    </script>
+</head>
+
+<body>
+
+    <h1>GA4 Direct Login Test</h1>
+    <button onclick="trackLogin()">Login with Microsoft</button>
+
+    <script>
+        function trackLogin() {
+            gtag('event', 'login', {
+                method: 'microsoft'
+            });
+            alert("Login event sent to GA4!");
+        }
+    </script>
+
+</body>
+
+</html>
